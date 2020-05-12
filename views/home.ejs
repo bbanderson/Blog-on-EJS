@@ -2,7 +2,12 @@
 <h1>HOME</h1>
 <p><%= homeStartingContent %></p>
 <% posts.forEach(element => { %>
-  <h3><%= element.title %></h3>
-  <p><%= element.post %></p>
+  <a href="posts/<%= element.title %>" class="title"><h3><%= element.title %></h3></a>
+  <p>
+    <%= element.post.length>=100 ? element.post.slice(0,100) + "..."  : element.post %>
+    <% if (element.post.length>=100) { %>
+      <a href="/posts/<%=element.title%>">Read More</a>
+    <% } %>
+  </p>
 <% }) %>
 <%- include('partials/footer') -%>

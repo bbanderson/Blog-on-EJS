@@ -49,10 +49,10 @@ app.get('/posts/:category', function (req, res) {
   posts.forEach(element => {
     if (_.lowerCase(element.title) === _.lowerCase(req.params.category))
     {
-      console.log("Match Found!");
+      res.render('post', {post: element})
     }
   })
-  console.log(req.params.category);
+  // console.log(req.params.category);
   
 })
 

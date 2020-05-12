@@ -33,3 +33,9 @@
 	font-size: 12px;
   color: #fff;
 }
+
+a.title {
+    display: inline;
+    color: #000;
+    text-decoration: none;
+}
