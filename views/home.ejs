@@ -2,11 +2,11 @@
 <h1>HOME</h1>
 <p><%= homeStartingContent %></p>
 <% posts.forEach(element => { %>
-  <a href="posts/<%= element.title %>" class="title"><h3><%= element.title %></h3></a>
+  <a href="posts/<%= element._id %>" class="title"><h3><%= element.title %></h3></a>
   <p>
-    <%= element.post.length>=100 ? element.post.slice(0,100) + "..."  : element.post %>
-    <% if (element.post.length>=100) { %>
-      <a href="/posts/<%=element.title%>">Read More</a>
+    <%= element.content.length>=100 ? element.content.slice(0,100) + "..."  : element.content %>
+    <% if (element.content.length>=100) { %>
+      <a href="/posts/<%=element._id%>">Read More</a>
     <% } %>
   </p>
 <% }) %>
